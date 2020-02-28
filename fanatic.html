@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ネコの地</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-common">
+            <div class="top-title">
+                    <h1>ネコはかわいい</h1>
+                    <h2>ネコの地</h2>
+            </div>
+            <nav class="hamburger-nav">
+                <button type="button" class="btn" id="btn" onclick="hamburgerClick();"></button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html"><p>現実に帰る</p></a></li>
+                    <li><a href="delusion.html"><p>ネコ妄想</p></a></li>
+                    <li><a href="phantasm.html"><p>ネコまみれ</p></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="fanatic-main">
+        <h1>ただひたすらにネコ</h1>
+        <div id="video_gallery"></div>
+    </main>
+
+    <footer>
+        <p>&copy 2020 Fuyuki Tanaka AllForCats Project</p>
+    </footer>
+
+    <script>
+        'use strict';
+
+        window.onload = function  () {
+            let script = document.createElement('script'),
+                KEY = 'AIzaSyDCk_wDlcuWllFELBLXtc0cBDZ72Bn1NN8',
+                url = 'https://www.googleapis.com/youtube/v3/search?';
+
+            url += 'type=video';
+            url += '&part=snippet';
+            url += '&q=cat';
+            url += '&videoEmbeddable=true';
+            url += '&videoSyndicated=true';
+            url += '&maxResults=48';
+            url += '&key=' + KEY;
+            url += '&callback=callback';
+
+            script.setAttribute('src', `${url}`);
+            document.body.appendChild(script);
+            document.body.removeChild(script);
+        };
+
+        function callback(data) {
+            if(data) {
+                alert('警告-WARNING- \n覚悟はいいですか？')
+                let result = "",
+                    video  = "",
+                    videoGallery = document.getElementById('video_gallery');
+
+                for (let i = 0; i<data.items.length; i++) {
+                video = '<iframe src="https://www.youtube.com/embed/';
+                video += data.items[i].id.videoId;
+                video += '" allowfullscreen></iframe>';
+                result += '<div class="video">' + video + '</div>';
+                }
+
+            videoGallery.insertAdjacentHTML('afterbegin', `${result}`);
+            } else {alert('該当するデータが見つかりませんでした')};
+        };
+    </script>
+
+    <script src="javascript.js"></script>
+
+</body>
+
+</html>

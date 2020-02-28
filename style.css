@@ -1,0 +1,803 @@
+@charset "UTF-8";
+
+/*全般*/
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+html h1,
+html p {
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+header h1,
+header h2,
+header p,
+main h1,
+main p {
+    color: #555;
+}
+
+/*リセット用CSS*/
+@media (min-width: 768px) and (max-width:1024px),
+(max-width: 767px) {
+    html {
+        font-size: 16px;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/*共通部分 header*/
+header {
+    width: 100%;
+    height: 180px;
+    background-color: floralwhite;
+    margin: 0 auto;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.header-common {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.top-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 300%;
+    margin-right: 30px;
+}
+
+header h2 {
+    font-size: 175%;
+}
+
+header nav {
+    margin-top: -50px;
+}
+
+header ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header ul li {
+    padding-right: 80px;
+}
+
+header ul:last-child {
+    padding-right: -80px;
+}
+
+header ul p {
+    font-size: 150%;
+}
+
+header ul a {
+    text-decoration: none;
+}
+
+/*共通部分 footer*/
+footer {
+    height: 100px;
+    background-color: #000;
+    color: #fff;
+    font-size: 130%;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*index.html*/
+.top-main {
+    background-color: #999;
+    background-image:url(picture/main-cat.jpg);
+    background-position: center;
+    background-blend-mode: screen;
+    background-size: cover;
+    height: 110vh;
+    margin: 120px auto 0px;
+}
+
+.top-content {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/*index.htmlのメイン要素の左側部分*/
+.top-main .top-description {
+    flex: 1 1 auto;
+    margin: 150px 5px 0px 5px;
+}
+
+.top-main h1 {
+    font-size: 175%;
+    font-weight: 600;
+    margin-bottom: 30px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.top-main p {
+    font-size: 130%;
+    font-weight: 600;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.top-main .top-description button {
+    color: #fff;
+    background-color: darkgreen;
+    height: 70px;
+    width: 280px;
+    font-size: 175%;
+    border-radius: 10px;
+    margin: 30px 0 0px;
+    position: relative;
+    animation: anime_button 2s ease;
+}
+
+/*index.htmlのボタン要素のアニメーション設定*/
+@keyframes anime_button {
+    0% {
+        opacity: 0;
+        top: 100px;
+    }
+
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+
+/*index.htmlのメイン要素の右側部分*/
+.top-main .top-side {
+    flex: 0 0 450px;
+    margin: 190px 10px 0px 10px;
+}
+
+@media (min-width: 768px) and (max-width:1024px) {
+    .top-main {
+        height: 115vh;
+    }
+
+    .top-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-main .top-side {
+        margin: 40px auto;
+        display: flex;
+        flex-direction: row-reverse;
+        flex: 0 0 225px;
+    }
+}
+
+@media (max-width: 767px) {
+    .top-title {
+        flex-direction: column;
+     }
+
+    .top-title h2 {
+        margin-top: -10px;
+    }
+
+    .top-main {
+        height: 140vh;
+    }
+
+    .top-content {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top-main h1 {
+        margin-top: -40px;
+    }
+
+    .top-main .top-description button {
+        margin-top: 100px;
+    }
+
+    .top-main .top-side {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: -30px auto;
+    }
+}
+
+/*delution.html*/
+.delusion-main {
+    margin-top: 180px;
+}
+
+.hamburger-nav button {
+    visibility: hidden;
+}
+
+/*delusion.htmlのメイン要素の上側部分*/
+.delusion-main-upperside {
+    background-image: url(picture/deluson.jpg);
+    background-color: #999;
+    background-position: right;
+    background-blend-mode: screen;
+    background-size: cover;
+    height: 60vh;
+}
+
+.delusion-main h1 {
+    max-width: 1600px;
+    font-size: 175%;
+    font-weight: 600;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.delusion-main-upperside p {
+    max-width: 1600px;
+    font-size: 130%;
+    font-weight: 600;
+    position: relative;
+    animation: anime_p 2s ease;
+    margin: 0 auto;
+    line-height: 200%;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+/*delusion.htmlのp要素のアニメーション設定*/
+@keyframes anime_p {
+    0% {
+        opacity: 0;
+        left: 200px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+/*delusion.htmlのメイン要素の下側部分*/
+.delusion-main #delusion-h1 {
+    font-size: 250%;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.delusion-main .picture p {
+    font-size: 130%;
+    font-weight: 400; 
+}
+
+.delusion-main .picture_column1,
+.delusion-main .picture_column2,
+.delusion-main .picture_column3 {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (max-width:1024px) {
+    .delusion-main-upperside {
+        height: 70vh;
+    }
+
+    .delusion-main .picture_column1,
+    .delusion-main .picture_column2,
+    .delusion-main .picture_column3 {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .delusion-main .picture p {
+        margin-bottom: 70px;
+    }
+}
+
+@media (max-width:767px) {
+    .hamburger-nav button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: none;
+        background: none;
+        border: none;
+        visibility: visible;
+        z-index: 2;
+    }
+
+    .hamburger-nav .btn::before{
+        content: '\f0c9';
+        font-family: 'font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 300%;
+    }
+
+    .hamburger-nav .btn.close::before {
+        content: '\f00d';
+    }
+
+    .nav-list {
+        flex-direction: column;
+        position: absolute;
+        top: -10px;
+        left: 0px;
+        background-color: floralwhite;
+        visibility: hidden;
+        opacity: 0; 
+    }
+
+    .nav-list.open {
+        visibility: visible;
+        opacity: 0.9;
+        transition:  opacity 0.4s;
+    }
+
+    header ul {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    header ul li {
+        padding-right: 0px;
+        padding-left: 40px;
+    }
+
+    header ul li p {
+        font-weight: 600;
+    }
+}
+
+/*phantasm.html*/
+.phantasm-main {
+    max-width: 1600px;
+    margin: 250px auto;
+    margin-bottom: 50px;
+}
+
+/*phantasm.htmlのスライドショー部分*/
+.phantasm-main .slideshow-containner {
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.phantasm-main p {
+    font-size: 130%;
+    font-weight: 600;
+    margin: 40px 10px 0 10px;
+    line-height: 1.5;
+}
+
+/*phantasm.htmlのイメージギャラリー部分*/
+.phantasm-main  .grid-containner{
+    margin: 100px auto;
+    display: flex; 
+    flex-direction: column;
+}
+
+.phantasm-main .grid-containner h1 {
+    text-align: center;
+}
+
+.phantasm-main .grid-area {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 160px 160px 160px;
+    grid-template-rows: 90px 90px;
+}
+
+#item1 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+#item2 {
+    grid-column: 2/4;
+    grid-row: 1/3;
+}
+
+#item3 {
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+#item4 {
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+
+#item5 {
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+#item6 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+/*phantasm.htmlのイメージギャラリーをモーダルウィンドウで実装*/
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 20;
+    visibility: hidden;
+}
+
+#modal1,
+#modal2,
+#modal3,
+#modal4,
+#modal5,
+#modal6 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 40;
+    visibility: hidden;
+}
+
+.modal-close {
+     text-decoration: none;
+     margin-top: -40px;
+}
+
+#modal1:target,
+#modal1:target ~ .background {
+     visibility: visible;
+}
+
+#modal2:target,
+#modal2:target ~ .background {
+     visibility: visible;
+}
+
+#modal3:target,
+#modal3:target ~ .background {
+     visibility: visible;
+}
+
+#modal4:target,
+#modal4:target ~ .background {
+     visibility: visible;
+}
+
+#modal5:target,
+#modal5:target ~ .background {
+     visibility: visible;
+}
+
+#modal6:target,
+#modal6:target ~ .background {
+     visibility: visible;
+}
+
+.closer-btn {
+     font-size: 40px;
+     color: #fff;
+}
+
+.closer-btn:hover {
+     color: #0bd;
+}
+
+.modal-content {
+     display: flex;
+}
+
+@media (max-width: 768px) {
+    .phantasm-main .grid-area { 
+        grid-template-columns: 160px 160px;
+        grid-template-rows: 90px 90px 90px;
+    }
+
+    #item1 {
+        grid-column: 1/3;
+        grid-row: 1/4;
+    }
+
+    #item2 {
+        grid-column: 2/3;
+        grid-row: 1/4;
+    }
+
+    #item3 {
+        grid-column: 1/3;
+        grid-row: 2/4;
+    }
+
+    #item4 {
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
+
+    #item5 {
+        grid-column: 1/3;
+        grid-row: 3/4;
+    }
+
+    #item6 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .modal-content {
+        flex-direction: column;
+    }
+
+    .closer-btn {
+        text-align: right;
+    }
+}
+
+/*phantasm.htmlのアコーディオンメニュー部分*/
+.phantasm-main .accordion {
+    display: none;
+}
+
+.phantasm-main #secret {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.phantasm-main label {
+    background: darkgreen;
+    color: #fff;
+    display: block;
+    width: 450px;
+    line-height: 3;
+    font-size: 120%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.phantasm-main .accordion-content {
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.phantasm-main .accordion-content ul {
+    list-style-type: none;
+    margin-top: -30px;
+}
+
+.phantasm-main .accordion-content a {
+    text-decoration: none;
+}
+ 
+.phantasm-main .accordion:checked + .accordion-content {
+    padding: 50px;
+    opacity: 1;
+}
+
+@media  (max-width: 1024px) {
+    .phantasm-main .slideshow-containner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*form.html*/
+.form-main {
+    margin-top: 180px;
+    background: url(picture/form.jpg);
+    background-position:center;
+    background-size: cover;
+    background-color: #999;
+    background-blend-mode: screen;
+    display: flex;
+}
+
+.form-containner {
+    max-width: 1600px;
+    margin: 40px auto;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-around;
+}
+
+/*form.htmlのフォーム（左側）部分*/
+.form-leftside-containner {
+    margin-top: 0px 20px 0 20px;
+    flex: 1 1 auto;
+}
+
+.form-main h1 {
+    color: #000; 
+}
+
+.form-main p {
+    color: #000; 
+    font-size: 150%;
+    margin-top: 60px;
+}
+
+.form-main #showlength {
+    margin: 20px 0 0 50px;
+    font-size: 120%;
+}
+
+.form-main form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-main form #submit {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: darkgreen;
+    color: #fff;
+    font-size: 150%;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.form-main  #name,
+.form-main #email,
+.form-main textarea {
+    border-radius: 10px;
+    line-height: 175%;
+    font-size: 110%;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.form-main #email {
+    width: 80%;
+}
+
+/*form.htmlのイラスト（右側）部分*/
+.form-main .form-rightside-containner {
+    margin: -70px 20px 0px 20px;
+    flex: 0 0 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-main .form-rightside-containner #neko-pc {
+    padding-bottom: 100px; 
+}
+
+.form-main .form-rightside-containner h2 {
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .form-containner {
+        flex-direction: column;
+    }
+
+    .form-main h1 {
+        text-align: center;
+    }
+
+    .form-main .form-rightside-containner {
+        max-width: 300px;
+        margin: 30px auto;
+        padding-top: 50px;
+    }
+
+    .form-main form {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-main dd {
+        margin-inline-start: 0px;
+    }
+
+    .form-main form #submit {
+        margin-left: 0px;
+    }
+
+    .form-main .form-img {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .form-main .form-rightside-containner #neko-pc {
+        padding-bottom: 0px; 
+    }
+}
+
+/*fanatic.html*/
+.fanatic-main {
+    margin-top: 180px; 
+    text-align: center; 
+    background-color: #444; 
+}
+
+.fanatic-main h1 {
+    padding-top: 40px;
+    color: #fff;
+}
+
+/*fanatic.htmlの動画ギャラリー部分*/
+#video_gallery {
+    margin: auto;
+    padding-top: 40px;
+    max-width: 1600px;
+    columns: 4;
+}
+
+#video_gallery .video {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 1280px) {
+    #video_gallery {
+        columns: 3;
+    }
+}
+
+@media (max-width: 1024px) {
+    #video_gallery {
+        columns: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    #video_gallery {
+        columns: 1;
+    }
+}

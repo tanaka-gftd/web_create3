@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>メッセージを送ろう</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap&subset=japanese" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-common">
+            <div class="top-title">
+                    <h1>ネコはかわいい</h1>
+                    <h2>メッセージを送ろう</h2>
+            </div>
+            <nav class = "hamburger-nav">
+                <button type="button" class="btn" id="btn" onclick="hamburgerClick();"></button>
+                <ul class="nav-list" id="nav-list">
+                    <li><a href="index.html"><p>現実に帰る</p></a></li>
+                    <li><a href="delusion.html"><p>ネコ妄想</p></a></li>
+                    <li><a href="phantasm.html"><p>ネコまみれ</p></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="form-main">
+        <div class="form-containner">
+            <div class="form-leftside-conainner">
+                <h1>ネコちゃんへの思いをぶちまけよう！</h1>
+                <form method="POST">
+                    <dl>
+                        <dt>
+                            <p>ネコ好きネーム</p>
+                        </dt>
+                        <dd>
+                            <input id="name" type="text" name="name" required>
+                        </dd>
+                        <dt>
+                            <p>メールアドレス</p>
+                        </dt>
+                        <dd>
+                            <input id="email" type="text" name="email" required>
+                        </dd>
+                        <dt>
+                            <p>ネコちゃんへのメッセージ</p>
+                        </dt>
+                        <dd>
+                            <textarea id="textarea" name="comment" cols="40" rows="10" wrap="soft"
+                                 minlength="200" maxlength="400" placeholder="ネコちゃんへの気持ちを書こう&#13;&#10;（４００字が上限ニャ）&#13;&#10;（でも、最低でも２００字は欲しいニャ）" 
+                                 onkeyup="countLength(value)" required></textarea>
+                        </dd>
+                             <p id="showlength">メッセージはまだ書かれていないニャ</p>
+                    </dl>
+                     <input id="submit" type="submit" name="submit" value="送信">
+                 </form>
+             </div>
+
+             <div class="form-rightside-containner">
+                 <h2>待ってるニャ～♪</h2>
+                 <div class="form-img">
+                     <img id="neko-pc" alt="neko-pc" src="picture/neko-pc.png" width="90%">
+                     <img id="neko-dance" alt="neko-dance" src="picture/neko-dance.png" width="80%">
+                </div>
+             </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy 2020 Fuyuki Tanaka AllForCats Project</p>
+    </footer>
+
+    <script>
+        'use strict';
+
+        function countLength(str) {
+            document.getElementById('showlength').innerHTML = "今、" + str.length + "文字目ニャ！";
+        }
+    </script>
+
+    <script src="javascript.js"></script>
+
+</body>
+
+</html>
